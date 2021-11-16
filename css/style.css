@@ -1,0 +1,60 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+/* utilities */
+.h-35 {
+    height: 35px;
+}
+
+.fs-10 {
+    font-size: 10px;
+}
+
+.fs-12 {
+    font-size: 12px;
+}
+
+.bg-light-blue {
+    background-color: #a2dffe;
+}
+
+.font-color-1 {
+    color: #a2dffe;
+}
+
+.user-photo {
+    width: 50px;
+    height: 50px;
+}
+
+.notify-bell {
+    width: 40px;
+    height: 40px
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(
+        to bottom,
+        #32a093 0%,
+        #32a093 15%,
+        #dfe0d9 15%,
+        #dfe0d9 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#root {
+    width: 80%;
+    min-width: 900px;
+    height: 95%;
+    background-color: #fff;
+    display: flex;
+}
+
+.main-section {
+    background-color: lightsalmon;
+}

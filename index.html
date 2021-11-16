@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- fontawesome -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' integrity='sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==' crossorigin='anonymous'/>
+    <!-- VUE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Boolzap</title>
+</head>
+<body>
+
+    <div id="root">
+        <!-- aside section -->
+        <aside class="aside-section w-25">
+
+            <!-- user section -->
+            <div class="user-section p-1 d-flex justify-content-between align-items-center">
+                <div class="user-info d-flex align-items-center">
+                    <div class="user-photo">
+                        <img class="img-fluid border rounded-pill" src="./img/avatar_io.jpg" alt="">
+                    </div>
+                    <span class="fs-12 fw-bold">Nome Utente</span>
+                </div>
+
+                <!-- icons user section -->
+                <div class="user-icons text-black-50">
+                    <i class="pe-3 fas fa-circle-notch"></i>
+                    <i class="pe-3 fas fa-comment-alt"></i>
+                    <i class="pe-3 fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+
+            <!-- notification section -->
+            <div class="notification-section d-flex align-items-center bg-light-blue px-3 py-2">
+                <div class="notification-info">
+                    <div class="notify-bell d-flex justify-content-center align-items-center bg-white rounded-pill">
+                        <i class="font-color-1 fas fa-bell-slash"></i>
+                    </div>
+                </div>
+                <div class="d-flex flex-column px-2">
+                    <span class="fs-12 fw-bold">Ricevi notifiche di nuovi messaggi</span>
+                    <a href="#" class="fs-10 text-black-50">Attiva notifiche desktop</a>
+                </div>
+            </div>
+
+            <!-- users section -->
+            <div class="users-section">
+                <div class="input-group flex-nowrap p-1 h-35">
+                    <span class="input-group-text bg-white" id="addon-wrapping"><i class="fs-6 text-black-50 fas fa-search"></i>
+                    </span>
+                    <input type="text" class="form-control fs-10" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+
+                <!-- users list -->
+                <ul class="list-unstyled">
+                    <li v-for="element in contacts"
+                    class="border-bottom">
+                        <div class="user-info d-flex align-items-center bg-white px-3 py-2">
+                            <div class="user-photo">
+                                <img class="img-fluid border rounded-pill" :src=`./img/avatar${element.avatar}.jpg` alt="">
+                            </div>
+                            <span class="fs-12 fw-bold ps-3">
+                                {{element.name}}
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+        </aside>
+
+        <!-- main section -->
+        <main class="main-section w-75">
+
+        </main>
+    </div>
+
+    <!-- JS -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
