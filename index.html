@@ -65,10 +65,10 @@
                 <!-- input search section -->
                 <div class="input-group flex-nowrap p-1 h-35 bg-light">
                     
-                    <span class="input-group-text bg-white" id="addon-wrapping"><i class="fs-6 text-black-50 fas fa-search"></i>
+                    <span class="input-group-text bg-white border-custom " id="addon-wrapping "><i class="fs-6 text-black-50 fas fa-search"></i>
                     </span>
 
-                    <input type="text" class="form-control fs-10" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
+                    <input type="text" class="form-control fs-10 border-custom fw-light" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
 
                 </div>
 
@@ -118,10 +118,10 @@
             </div>
 
             <!-- chat section -->
-            <div class="flex-grow-1 bg-main-middle p-5rem d-flex flex-column">
+            <div class="flex-grow-1 bg-main-middle px-y d-flex flex-column overflow-scroll">
                 
                 <!-- messages sended -->
-                <div class="mess-sended d-flex flex-column">
+                <div class="mess-sended d-flex flex-column mb-4">
                     <div>
                         Messaggio inviato
                     </div>
@@ -131,7 +131,45 @@
                 </div>
 
                 <!-- messages received -->
-                <div class="mess-received d-flex flex-column">
+                <div class="mess-received d-flex flex-column mb-4">
+                    <div>
+                        Messaggio ricevuto
+                    </div>
+                    <div class="fs-10 flex-column align-self-end text-black-50">
+                        10/01/2021 15:50:00
+                    </div>
+                </div>
+
+                <div class="mess-sended d-flex flex-column mb-4">
+                    <div>
+                        Messaggio inviato
+                    </div>
+                    <div class="fs-10 flex-column align-self-end text-black-50">
+                        10/01/2021 15:50:00
+                    </div>
+                </div>
+
+                <!-- messages received -->
+                <div class="mess-received d-flex flex-column mb-4">
+                    <div>
+                        Messaggio ricevuto
+                    </div>
+                    <div class="fs-10 flex-column align-self-end text-black-50">
+                        10/01/2021 15:50:00
+                    </div>
+                </div>
+
+                <div class="mess-sended d-flex flex-column mb-4">
+                    <div>
+                        Messaggio inviato
+                    </div>
+                    <div class="fs-10 flex-column align-self-end text-black-50">
+                        10/01/2021 15:50:00
+                    </div>
+                </div>
+
+                <!-- messages received -->
+                <div class="mess-received d-flex flex-column mb-4">
                     <div>
                         Messaggio ricevuto
                     </div>
@@ -142,8 +180,16 @@
             </div>
 
             <!-- input message section -->
-            <div>
-                
+            <div class="chat-bar d-flex align-items-center w-100 bg-light">
+                <div class="emote-btn mx-y">
+                    <i class="far fa-grin-beam fs-22 text-black-50"></i>
+                </div>
+                <div class="flex-grow-1 py-2">
+                    <input class="input w-100 h-50px border-custom px-3 fw-light" type="text" placeholder="Scrivi il tuo messaggio">
+                </div>
+                <div class="mic-btn mx-y" >
+                    <i class="fas fa-microphone-alt fs-22 text-black-50"></i>
+                </div>
             </div>
 
         </main>
