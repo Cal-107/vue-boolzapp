@@ -1,6 +1,12 @@
 const root = new Vue ({
     el: '#root',
     data: {
+        user: {
+            name: 'Calogero',
+            lastname: 'Bonito',
+            avatar: '_2',
+            visible: true,
+        },
         contacts: [
             {
                 name: 'Michele',
