@@ -74,8 +74,10 @@
 
                 <!-- users list -->
                 <ul class="list-unstyled list-users">
-                    <li v-for="element in contacts"
-                        class="border-bottom contact">
+                    <li v-for="(element, index) in contacts"
+                        class="border-bottom contact"
+                        v-bind:class="{active: index === userActive}"
+                        @click="userClick(index)">
 
                         <div class="d-flex align-items-center px-3 py-2">
 
@@ -121,7 +123,7 @@
             <div class="flex-grow-1 bg-main-middle px-y d-flex flex-column overflow-scroll">
                 
                 <!-- messages sended -->
-                <div class="mess-sended d-flex flex-column mb-4">
+                <div class="mess-sent d-flex flex-column mb-4">
                     <div>
                         {{ contacts[0].messages[0].text }}
                     </div>
@@ -130,8 +132,8 @@
                     </div>
                 </div>
 
-                <!-- messages sended -->
-                <div class="mess-sended d-flex flex-column mb-4">
+                <!-- messages sent -->
+                <div class="mess-sent d-flex flex-column mb-4">
                     <div>
                         {{ contacts[0].messages[1].text }}
                     </div>

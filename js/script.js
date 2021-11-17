@@ -4,7 +4,7 @@ const root = new Vue ({
         user: {
             name: 'Calogero',
             lastname: 'Bonito',
-            avatar: '_2',
+            avatar: '_io',
             visible: true,
         },
         contacts: [
@@ -90,6 +90,12 @@ const root = new Vue ({
                     }
                 ],
             },
-        ],  
+        ],
+        userActive: 0,
+    },
+    methods: {
+        userClick(index) {
+            this.userActive = index;
+        }
     }
 })

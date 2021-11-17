@@ -92,7 +92,7 @@ i,
     padding: .5rem .5rem .2rem 1rem;
 }
 
-.mess-sended {
+.mess-sent {
     background-color: #ddfabf;
     width: 300px;
     align-self: flex-end;
@@ -105,5 +105,9 @@ i,
 }
 
 .contact:hover {
+    background-color: lightgrey;
+}
+
+.contact.active {
     background-color: lightgrey;
 }
