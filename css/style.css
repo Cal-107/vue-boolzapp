@@ -27,6 +27,9 @@ i,
     height: 95%;
     background-color: #fff;
     display: flex;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 40px;
+    overflow: hidden;
 }
 
 /* utilities */
@@ -81,6 +84,14 @@ i,
     border: .1px solid rgb(244, 244, 244);
 }
 
+.chat-section {
+    scroll-behavior: smooth;
+}
+
+.scroll {
+    overflow: scroll;
+}
+
 .bg-main-middle {
     background-image: url("../img/mine.jpg");
 }
@@ -89,6 +100,7 @@ i,
     text-align: end;
 }
 
+/* chat messages section */
 .received {
     background-color: #fff;
     width: 300px;
@@ -104,6 +116,7 @@ i,
     padding: .5rem .5rem .2rem 1rem;
 }
 
+/* effect section */
 .contact {
     transition: background-color .5s ease;
 }

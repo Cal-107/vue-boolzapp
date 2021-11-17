@@ -100,6 +100,7 @@ const root = new Vue ({
         // for get the index
         userClick(index) {
             this.userActive = index;
+            this.scrollToEnd()
         },
 
         // input send message
@@ -110,18 +111,29 @@ const root = new Vue ({
                     text: this.newMess,
                     status: 'sent',
                 });
+                this.scrollToEnd()
 
                 // reset input
                 this.newMess = '';
 
+                // set bot answers
                 setTimeout(() => {
                     this.contacts[this.userActive].messages.push({
                         date: this.getDate(),
                         text: this.chatAnswers[this.randNum(this.chatAnswers)],
                         status: 'received',
                     });
+                    this.scrollToEnd()
                 }, 1000);
             };
+        },
+
+        scrollToEnd() {
+            setTimeout(() => {
+                let container = document.querySelector(".scroll");
+                let scrollHeight = container.scrollHeight;
+                container.scrollTop = scrollHeight;
+            }, 1);
         },
 
         // create date
