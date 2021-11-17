@@ -91,11 +91,48 @@ const root = new Vue ({
                 ],
             },
         ],
+        chatAnswers: ['Ma stai scherzando?', 'In che senso?', 'Per me è no', 'Sicuramente', 'Non saprei', 'Sono in riunione'],
         userActive: 0,
+        newMess: '',
     },
     methods: {
+        
+        // for get the index
         userClick(index) {
             this.userActive = index;
-        }
+        },
+
+        // input send message
+        sendMess() {
+            if(this.newMess !== '') {
+                this.contacts[this.userActive].messages.push({
+                    date: this.getDate(),
+                    text: this.newMess,
+                    status: 'sent',
+                });
+
+                // reset input
+                this.newMess = '';
+
+                setTimeout(() => {
+                    this.contacts[this.userActive].messages.push({
+                        date: this.getDate(),
+                        text: this.chatAnswers[this.randNum(this.chatAnswers)],
+                        status: 'received',
+                    });
+                }, 1000);
+            };
+        },
+
+        // create date
+        getDate() {
+            const nowDate = dayjs().format('DD/MM/YYYY HH:mm:ss');
+            return nowDate
+        },
+
+        // create rand number for array
+        randNum(array) {
+            return Math.floor(Math.random() * array.length);
+        },
     }
 })

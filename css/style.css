@@ -85,14 +85,18 @@ i,
     background-image: url("../img/mine.jpg");
 }
 
-.mess-received {
+.mess-date {
+    text-align: end;
+}
+
+.received {
     background-color: #fff;
     width: 300px;
     border-radius: 10px;
     padding: .5rem .5rem .2rem 1rem;
 }
 
-.mess-sent {
+.sent {
     background-color: #ddfabf;
     width: 300px;
     align-self: flex-end;
