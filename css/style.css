@@ -119,6 +119,7 @@ i,
 /* effect section */
 .contact {
     transition: background-color .5s ease;
+    border-radius: 15px;
 }
 
 .contact:hover {
