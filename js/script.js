@@ -177,13 +177,16 @@ const root = new Vue ({
         userActive: 0,
         newMess: '',
         newSearch: '',
+        dropDown: false,
+        chatActive: null,
     },
     methods: {
         
         // for get the index
         userClick(index) {
             this.userActive = index;
-            this.scrollToEnd()
+            this.scrollToEnd();
+            this.chatActive = -1
         },
 
         // input send message
@@ -203,7 +206,7 @@ const root = new Vue ({
                 setTimeout(() => {
                     this.contacts[this.userActive].messages.push({
                         date: this.getDate(),
-                        text: this.chatAnswers[this.randNum(this.chatAnswers)],
+                        text: this.chatAnswers[this.randNum(this.chatAnswers.length)],
                         status: 'received',
                     });
                     this.scrollToEnd()
@@ -227,8 +230,8 @@ const root = new Vue ({
         },
 
         // create rand number for array
-        randNum(array) {
-            return Math.floor(Math.random() * array.length);
+        randNum(num) {
+            return Math.floor(Math.random() * num);
         },
 
         // input search
@@ -240,6 +243,19 @@ const root = new Vue ({
                    element.visible = true; 
                 }
             });
+        },
+
+        // show dropdown
+        showDropDown(index) {
+            if (this.chatActive === index) {
+                this.chatActive = null;
+            } else {
+                this.chatActive = index;
+            }
+        },
+
+        deleteMess(index) {
+            this.contacts[this.userActive].messages.splice(index, 1)
         }
     }
 })

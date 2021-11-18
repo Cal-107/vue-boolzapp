@@ -30,7 +30,9 @@
                     <div class="user-photo">
                         <img class="img-fluid border rounded-pill" :src=`./img/avatar${user.avatar}.jpg` alt="">
                     </div>
-                    <span class="fs-12 px-2 fw-bold">{{ user.name }} {{ user.lastname }}</span>
+                    <span class="fs-12 px-2 fw-bold">
+                        {{ user.name }} {{ user.lastname }}
+                    </span>
                 </div>
 
                 <!-- icons user section -->
@@ -131,18 +133,31 @@
             <div class="chat-section flex-grow-1 bg-main-middle px-y d-flex flex-column scroll"
             >
             
-                 <div v-for="(element, index) in contacts[userActive].messages"
-                 :class="element.status"
-                 class="d-flex flex-column mb-4"
-                 >
-                    <div class="mess-body">
+                <div v-for="(element, index) in contacts[userActive].messages"
+                      :class="element.status"
+                      class="d-flex flex-column mb-4"
+                    >
+
+                    <div class="mess-body d-flex align-items-center justify-content-between">
                         {{ element.text }}
+                        <i class="fas fa-chevron-up drop-menu position-relative"
+                           @click="showDropDown(index)">
+                            <div class="drop-text"
+                                v-if="index === chatActive"
+                            >
+                                <div class="p-3 fw-light"
+                                     @click="deleteMess(index)"
+                                >Cancella messaggio</div>
+                                <div class="p-3 fw-light">Info messaggio</div>
+                            </div>
+                        </i>
+                        
                     </div>
 
                     <div class="mess-date fs-10 text-black-50">
                        {{ element.date }}
                     </div>
-                 </div>
+                </div>
             </div>
 
             <!-- input message section -->
