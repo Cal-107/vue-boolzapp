@@ -20,7 +20,7 @@
 </head>
 <body>
 
-    <div id="root" class="container">
+    <div id="root">
         <!-- aside section -->
         <aside class="aside-section w-25 border-end overflow-scroll">
 
@@ -68,7 +68,10 @@
                     <span class="input-group-text bg-white border-custom " id="addon-wrapping "><i class="fs-6 text-black-50 fas fa-search"></i>
                     </span>
 
-                    <input type="text" class="form-control fs-10 border-custom fw-light" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
+                    <input type="text" class="form-control fs-10 border-custom fw-light" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping"
+                           v-model.trim="newSearch"
+                           @keyup="inputSearch"
+                    >
 
                 </div>
 
@@ -77,7 +80,9 @@
                     <li v-for="(element, index) in contacts"
                         class="border-bottom contact"
                         v-bind:class="{active: index === userActive}"
-                        @click="userClick(index)">
+                        v-if="element.visible"
+                        @click="userClick(index)"
+                    >
 
                         <div class="d-flex align-items-center px-3 py-2">
 

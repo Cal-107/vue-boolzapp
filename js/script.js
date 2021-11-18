@@ -176,6 +176,7 @@ const root = new Vue ({
         chatAnswers: ['Ma stai scherzando?', 'In che senso?', 'Per me è no', 'Sicuramente', 'Non saprei', 'Sono in riunione'],
         userActive: 0,
         newMess: '',
+        newSearch: '',
     },
     methods: {
         
@@ -229,5 +230,16 @@ const root = new Vue ({
         randNum(array) {
             return Math.floor(Math.random() * array.length);
         },
+
+        // input search
+        inputSearch() {
+            this.contacts.forEach( element => {
+                if (!element.name.toLowerCase().includes(this.newSearch.toLowerCase())) {
+                    element.visible = false;
+                } else {
+                   element.visible = true; 
+                }
+            });
+        }
     }
 })
