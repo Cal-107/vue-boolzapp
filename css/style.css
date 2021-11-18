@@ -33,6 +33,14 @@ i,
 }
 
 /* utilities */
+.w-30 {
+    width: 30%;
+}
+
+.w-70 {
+    width: 70%;
+}
+
 .h-35 {
     height: 35px;
 }
@@ -107,15 +115,47 @@ i,
     border-radius: 10px;
     padding: .5rem .5rem .2rem 1rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+}
+
+.received:after {
+	content: '';
+	position: absolute;
+	left: 80px;
+	top: 60px;
+	width: 0;
+	height: 0;
+	border: 25px solid transparent;
+	border-right-color: #fff;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -50px;
+	margin-left: -100px;
 }
 
 .sent {
     background-color: #ddfabf;
     width: 300px;
     align-self: flex-end;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: .5rem .5rem .2rem 1rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+}
+
+.sent:after {
+	content: '';
+    position: absolute;
+    right: 80px;
+    top: 60px;
+    width: 0;
+    height: 0;
+    border: 25px solid transparent;
+    border-left-color: #ddfabf;
+    border-right: 0;
+    border-top: 0;
+    margin-top: -50px;
+    margin-right: -100px;
 }
 
 /* effect section */
@@ -138,4 +178,5 @@ i,
     background: #fff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     right: 0;
+    border-radius: 15px;
 }

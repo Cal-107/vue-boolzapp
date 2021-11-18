@@ -22,7 +22,7 @@
 
     <div id="root">
         <!-- aside section -->
-        <aside class="aside-section w-25 border-end overflow-scroll">
+        <aside class="aside-section w-30 border-end overflow-scroll">
 
             <!-- user section -->
             <div class="user-section p-2 d-flex justify-content-between align-items-center bg-light">
@@ -106,7 +106,7 @@
         </aside>
 
         <!-- main section -->
-        <main class="main-section w-75 d-flex flex-column">
+        <main class="main-section w-70 d-flex flex-column">
 
             <!-- info user chat -->
             <div class="user-section p-2 d-flex justify-content-between align-items-center bg-light">
@@ -141,14 +141,21 @@
                     <div class="mess-body d-flex align-items-center justify-content-between">
                         {{ element.text }}
                         <i class="fas fa-chevron-up drop-menu position-relative"
-                           @click="showDropDown(index)">
+                           @click="showDropDown(index)"
+                           >
+
                             <div class="drop-text"
                                 v-if="index === chatActive"
-                            >
+                                >
                                 <div class="p-3 fw-light"
                                      @click="deleteMess(index)"
-                                >Cancella messaggio</div>
-                                <div class="p-3 fw-light">Info messaggio</div>
+                                    >
+                                     Cancella messaggio
+                                </div>
+
+                                <div class="p-3 fw-light">
+                                    Info messaggio
+                                </div>
                             </div>
                         </i>
                         

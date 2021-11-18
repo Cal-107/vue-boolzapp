@@ -186,7 +186,7 @@ const root = new Vue ({
         userClick(index) {
             this.userActive = index;
             this.scrollToEnd();
-            this.chatActive = -1
+            this.chatActive = null
         },
 
         // input send message
@@ -254,6 +254,7 @@ const root = new Vue ({
             }
         },
 
+        // delete message
         deleteMess(index) {
             this.contacts[this.userActive].messages.splice(index, 1)
         }
